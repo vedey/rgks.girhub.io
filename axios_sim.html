@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+    Title:      axios basic: 最简单的例子
+    Author:     markwy
+    Date:       2020.5.30
+    Comment:    2020.8.15 把数据接口网址改为http://wthrcdn.etouch.cn/weather_mini?city=青岛
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>axios Demo</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.18.0/axios.js"></script>
+</head>
+
+<body>
+<div id="app1">
+    <p id='output_text'></p>
+</div>
+
+<script>
+    axios
+      .get('http://wthrcdn.etouch.cn/weather_mini?city=青岛')
+      .then(function (response) {
+        document.getElementById("output_text").innerHTML = JSON.stringify(response);
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+</script>
+
+</body>
+</html>
